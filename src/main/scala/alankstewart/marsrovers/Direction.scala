@@ -1,36 +1,36 @@
 package alankstewart.marsrovers
 
-sealed abstract class Direction(x: Int, y: Int) {
+sealed abstract class Direction(val x: Int, val y: Int) {
 
   def left: Direction
 
   def right: Direction
 }
 
-case object N extends Direction(0, 1) {
+case object North extends Direction(0, 1) {
 
-  def left = W
+  override def left: Direction = West
 
-  def right = E
+  override def right: Direction = East
 }
 
-case object S extends Direction(0, -1) {
+case object South extends Direction(0, -1) {
 
-  def left = E
+  override def left = East
 
-  def right = W
+  override def right = West
 }
 
-case object E extends Direction(1, 0) {
+case object East extends Direction(1, 0) {
 
-  def left = N
+  override def left = North
 
-  def right = S
+  override def right = South
 }
 
-case object W extends Direction(-1, 0) {
+case object West extends Direction(-1, 0) {
 
-  def left = S
+  override def left = South
 
-  def right = N
+  override def right = North
 }
