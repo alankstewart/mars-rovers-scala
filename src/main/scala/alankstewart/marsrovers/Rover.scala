@@ -22,5 +22,7 @@ case class Rover(plateau: Plateau, position: Position, direction: Direction) {
 
   def turnRight() = Rover(plateau, position, direction.right)
 
-  override def toString: String = s"$position $direction"
+  def currentPosition: String = toString
+
+  override def toString = s"$position $direction"
 }
